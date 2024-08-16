@@ -1,0 +1,9 @@
+D:\reposss\ZamaylOnlineExams\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+D:\reposss\ZamaylOnlineExams\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\reposss\ZamaylOnlineExams\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\reposss\ZamaylOnlineExams\BusinessLayer\obj\Debug\BusinessLayer.pdb
+D:\reposss\ZamaylOnlineExams\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\reposss\ZamaylOnlineExams\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\reposss\ZamaylOnlineExams\BusinessLayer\bin\Debug\DataAccess.dll
+D:\reposss\ZamaylOnlineExams\BusinessLayer\bin\Debug\DataAccess.pdb
+D:\reposss\ZamaylOnlineExams\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date

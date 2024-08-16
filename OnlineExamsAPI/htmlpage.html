@@ -1,0 +1,977 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX API Example</title>
+</head>
+<body>
+    <h1>AJAX API Example</h1>
+    <button id="fetchData">Fetch Data</button>
+    <div id="result">fdfd</div>
+
+    <script>
+
+        var data =
+
+
+
+            [
+                {
+                    "examID": 3,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": [
+                        {
+                            "questionID": 61,
+                            "questionText": "تدخل الثقافة في إطار المعرفة النظرية",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 62,
+                            "questionText": "الغاية الكبرى التي يسعى القرآن لإيجادها هي الإنسان الصالح العابد",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 63,
+                            "questionText": "التقليد الأعمى للآباء والأجداد يتناقض مع الحرية الواعية",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 64,
+                            "questionText": "تضمن القرآن الكريم خلاصة التعاليم الإلهية",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 65,
+                            "questionText": "لأهمية العدل, أمر الإسلام بالجهاد لرفع الظلم ونشر العدل",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 66,
+                            "questionText": "لا بد في الثقافة أن تتجلى في سلوك الإنسان شخصياً واجتماعياً",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 67,
+                            "questionText": "ذهب اللحياني إلى أن القرآن اسم مشتق مهموز من قرأ, أي: تلا",
+                            "questionTypeName": "True/False",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        },
+                        {
+                            "questionID": 68,
+                            "questionText": "مؤسس بيت الحكمة هو الخليفة",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 185,
+                                    "questionID": 68,
+                                    "optionText": "الأمين"
+                                },
+                                {
+                                    "optionID": 186,
+                                    "questionID": 68,
+                                    "optionText": "المأمون"
+                                },
+                                {
+                                    "optionID": 187,
+                                    "questionID": 68,
+                                    "optionText": "الواثق"
+                                },
+                                {
+                                    "optionID": 188,
+                                    "questionID": 68,
+                                    "optionText": "هارون الرشيد"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 69,
+                            "questionText": "في الحديث عن النبي صلى الله عليه وسلم : (اعدلوا بين...)",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 189,
+                                    "questionID": 69,
+                                    "optionText": "أبنائكم"
+                                },
+                                {
+                                    "optionID": 190,
+                                    "questionID": 69,
+                                    "optionText": "أقرباكم"
+                                },
+                                {
+                                    "optionID": 191,
+                                    "questionID": 69,
+                                    "optionText": "إخوانكم"
+                                },
+                                {
+                                    "optionID": 192,
+                                    "questionID": 69,
+                                    "optionText": "جيرانكم"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 70,
+                            "questionText": "ما المقصود في قوله تعالى (فاليوم ننجيك ببدنك لتكون لمن خلفك آية وإن كثيراً من الناس عن آياتنا لغافلوم",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 193,
+                                    "questionID": 70,
+                                    "optionText": "النمرود"
+                                },
+                                {
+                                    "optionID": 194,
+                                    "questionID": 70,
+                                    "optionText": "فرعون"
+                                },
+                                {
+                                    "optionID": 195,
+                                    "questionID": 70,
+                                    "optionText": "قدار"
+                                },
+                                {
+                                    "optionID": 196,
+                                    "questionID": 70,
+                                    "optionText": "كسرى"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 71,
+                            "questionText": "يوصف القرآن في تعريفه بأنه",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 197,
+                                    "questionID": 71,
+                                    "optionText": "المبدوء بسورة الفاتحة المختوم بسروة الناس"
+                                },
+                                {
+                                    "optionID": 198,
+                                    "questionID": 71,
+                                    "optionText": "منقول بالتواتر"
+                                },
+                                {
+                                    "optionID": 199,
+                                    "questionID": 71,
+                                    "optionText": "مُعجَز"
+                                },
+                                {
+                                    "optionID": 200,
+                                    "questionID": 71,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 72,
+                            "questionText": "الإيمان",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 201,
+                                    "questionID": 72,
+                                    "optionText": "عقد"
+                                },
+                                {
+                                    "optionID": 202,
+                                    "questionID": 72,
+                                    "optionText": "عمل"
+                                },
+                                {
+                                    "optionID": 203,
+                                    "questionID": 72,
+                                    "optionText": "قول"
+                                },
+                                {
+                                    "optionID": 204,
+                                    "questionID": 72,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 73,
+                            "questionText": "من الأهداف القريبة للمنهج الإسلامي",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 205,
+                                    "questionID": 73,
+                                    "optionText": "توحيد مشاعر الأمة على أساس كلمة التوحيد"
+                                },
+                                {
+                                    "optionID": 206,
+                                    "questionID": 73,
+                                    "optionText": "العفو عن السيئات"
+                                },
+                                {
+                                    "optionID": 207,
+                                    "questionID": 73,
+                                    "optionText": "دخول جنات النعيم"
+                                },
+                                {
+                                    "optionID": 208,
+                                    "questionID": 73,
+                                    "optionText": "غفران الذنوب"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 74,
+                            "questionText": "أساس التكافل الاجتماعي",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 209,
+                                    "questionID": 74,
+                                    "optionText": "التاكفل بين الفرد وأسرته"
+                                },
+                                {
+                                    "optionID": 210,
+                                    "questionID": 74,
+                                    "optionText": "التاكفل بين الفرد وأمته"
+                                },
+                                {
+                                    "optionID": 211,
+                                    "questionID": 74,
+                                    "optionText": "التاكفل بين الفرد وذاته"
+                                },
+                                {
+                                    "optionID": 212,
+                                    "questionID": 74,
+                                    "optionText": "التاكفل بين الفرد وعشيرته"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 75,
+                            "questionText": "ورد في قوله تعالى : (بلى قادرين على أن نسوي بنانه) في سورة",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 213,
+                                    "questionID": 75,
+                                    "optionText": "الأنعام"
+                                },
+                                {
+                                    "optionID": 214,
+                                    "questionID": 75,
+                                    "optionText": "الذاريات"
+                                },
+                                {
+                                    "optionID": 215,
+                                    "questionID": 75,
+                                    "optionText": "الفجر"
+                                },
+                                {
+                                    "optionID": 216,
+                                    "questionID": 75,
+                                    "optionText": "القيامة"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 76,
+                            "questionText": "من العلماء الذين جمعوا مزايا تشريعات القرآن في كتبهم",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 217,
+                                    "questionID": 76,
+                                    "optionText": "ابن باز"
+                                },
+                                {
+                                    "optionID": 218,
+                                    "questionID": 76,
+                                    "optionText": "الخالدي"
+                                },
+                                {
+                                    "optionID": 219,
+                                    "questionID": 76,
+                                    "optionText": "الزرقا"
+                                },
+                                {
+                                    "optionID": 220,
+                                    "questionID": 76,
+                                    "optionText": "النابلسي"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 77,
+                            "questionText": "يقول تعالى أفحكم... يبغون ومن أحسن حكماً من الله لقوم يوقنون",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 221,
+                                    "questionID": 77,
+                                    "optionText": "الباطل"
+                                },
+                                {
+                                    "optionID": 222,
+                                    "questionID": 77,
+                                    "optionText": "الجاهلية"
+                                },
+                                {
+                                    "optionID": 223,
+                                    "questionID": 77,
+                                    "optionText": "الطاغوت"
+                                },
+                                {
+                                    "optionID": 224,
+                                    "questionID": 77,
+                                    "optionText": "الظلم"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 78,
+                            "questionText": "من العلماء الذين قالزا إن القرآن اسم علم غير مشتق",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 225,
+                                    "questionID": 78,
+                                    "optionText": "ابن كثير"
+                                },
+                                {
+                                    "optionID": 226,
+                                    "questionID": 78,
+                                    "optionText": "السيوطي"
+                                },
+                                {
+                                    "optionID": 227,
+                                    "questionID": 78,
+                                    "optionText": "الشافعي"
+                                },
+                                {
+                                    "optionID": 228,
+                                    "questionID": 78,
+                                    "optionText": "جميع من ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 79,
+                            "questionText": "من أمثلة الإجماع",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 229,
+                                    "questionID": 79,
+                                    "optionText": "تحريم الزواج من الجدات"
+                                },
+                                {
+                                    "optionID": 230,
+                                    "questionID": 79,
+                                    "optionText": "تحريم الزواج من بنات الابن"
+                                },
+                                {
+                                    "optionID": 231,
+                                    "questionID": 79,
+                                    "optionText": "تحريم الزواج من البنت"
+                                },
+                                {
+                                    "optionID": 232,
+                                    "questionID": 79,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 80,
+                            "questionText": "قاعدة (الأصل في الأشياء الإباحة) تنضوي تحت دليل",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 233,
+                                    "questionID": 80,
+                                    "optionText": "الاستحسان"
+                                },
+                                {
+                                    "optionID": 234,
+                                    "questionID": 80,
+                                    "optionText": "الاستصحاب"
+                                },
+                                {
+                                    "optionID": 235,
+                                    "questionID": 80,
+                                    "optionText": "الاستصلاح"
+                                },
+                                {
+                                    "optionID": 236,
+                                    "questionID": 80,
+                                    "optionText": "المصلحة المرسلة"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 81,
+                            "questionText": "المقصود بالجمع في قوله تعالى : (سيُهزم الجمع ويولون الدبر) هو جمع المشركين يوم",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 237,
+                                    "questionID": 81,
+                                    "optionText": "الأحزاب"
+                                },
+                                {
+                                    "optionID": 238,
+                                    "questionID": 81,
+                                    "optionText": "بدر"
+                                },
+                                {
+                                    "optionID": 239,
+                                    "questionID": 81,
+                                    "optionText": "خيبر"
+                                },
+                                {
+                                    "optionID": 240,
+                                    "questionID": 81,
+                                    "optionText": "فتح مكة"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 82,
+                            "questionText": "واحد من التالية يُعد من التراث في الحضارة العربية الإسلامية",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 241,
+                                    "questionID": 82,
+                                    "optionText": "السنة النبوية"
+                                },
+                                {
+                                    "optionID": 242,
+                                    "questionID": 82,
+                                    "optionText": "القرآن الكريم"
+                                },
+                                {
+                                    "optionID": 243,
+                                    "questionID": 82,
+                                    "optionText": "بناء المدن والقصور"
+                                },
+                                {
+                                    "optionID": 244,
+                                    "questionID": 82,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 83,
+                            "questionText": "يُشترط في المجتهد المطلق",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 245,
+                                    "questionID": 83,
+                                    "optionText": "العلم بالتراث الفقهي العام"
+                                },
+                                {
+                                    "optionID": 246,
+                                    "questionID": 83,
+                                    "optionText": "العلم بالقرآن الكريم وعلومه"
+                                },
+                                {
+                                    "optionID": 247,
+                                    "questionID": 83,
+                                    "optionText": "العلم بمواضع الإجماع"
+                                },
+                                {
+                                    "optionID": 248,
+                                    "questionID": 83,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 84,
+                            "questionText": "أحد الأعمال التالية يدخل في مجال العبادة",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 249,
+                                    "questionID": 84,
+                                    "optionText": "إقامة الصلاة"
+                                },
+                                {
+                                    "optionID": 250,
+                                    "questionID": 84,
+                                    "optionText": "الإصلاح بين الناس"
+                                },
+                                {
+                                    "optionID": 251,
+                                    "questionID": 84,
+                                    "optionText": "بر الوالدين"
+                                },
+                                {
+                                    "optionID": 252,
+                                    "questionID": 84,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 85,
+                            "questionText": "مجموع ما يتبخر من الماء هو مجموع ما ينزل من أمطار من السماء وهو ما يعادل",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 253,
+                                    "questionID": 85,
+                                    "optionText": "300 مليون كم"
+                                },
+                                {
+                                    "optionID": 254,
+                                    "questionID": 85,
+                                    "optionText": "320 مليون كم"
+                                },
+                                {
+                                    "optionID": 255,
+                                    "questionID": 85,
+                                    "optionText": "340 مليون كم"
+                                },
+                                {
+                                    "optionID": 256,
+                                    "questionID": 85,
+                                    "optionText": "365 مليون كم"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 86,
+                            "questionText": "تشتمل الثقافة الإسلامية على جوانب الإنسان",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 257,
+                                    "questionID": 86,
+                                    "optionText": "الروحية"
+                                },
+                                {
+                                    "optionID": 258,
+                                    "questionID": 86,
+                                    "optionText": "العقلية"
+                                },
+                                {
+                                    "optionID": 259,
+                                    "questionID": 86,
+                                    "optionText": "الوجدانية"
+                                },
+                                {
+                                    "optionID": 260,
+                                    "questionID": 86,
+                                    "optionText": "جميع ما ذكر"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 87,
+                            "questionText": "مكتشف العقل الباطن هو",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 261,
+                                    "questionID": 87,
+                                    "optionText": "بوكاي"
+                                },
+                                {
+                                    "optionID": 262,
+                                    "questionID": 87,
+                                    "optionText": "زويمر"
+                                },
+                                {
+                                    "optionID": 263,
+                                    "questionID": 87,
+                                    "optionText": "فرويد"
+                                },
+                                {
+                                    "optionID": 264,
+                                    "questionID": 87,
+                                    "optionText": "نيوتن"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 88,
+                            "questionText": "يقول تعالى :(وجعلناكم شعوبا وقبائل....(",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 265,
+                                    "questionID": 88,
+                                    "optionText": "لتحابوا"
+                                },
+                                {
+                                    "optionID": 266,
+                                    "questionID": 88,
+                                    "optionText": "لتعارفوا"
+                                },
+                                {
+                                    "optionID": 267,
+                                    "questionID": 88,
+                                    "optionText": "لتعاونو"
+                                },
+                                {
+                                    "optionID": 268,
+                                    "questionID": 88,
+                                    "optionText": "لتوارثوا"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 89,
+                            "questionText": "مظاهر الإعجاز البياني عنده تكمن في صوت النفس وصوت العقل وصوت الحس",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 269,
+                                    "questionID": 89,
+                                    "optionText": "الرازي"
+                                },
+                                {
+                                    "optionID": 270,
+                                    "questionID": 89,
+                                    "optionText": "الرافعي"
+                                },
+                                {
+                                    "optionID": 271,
+                                    "questionID": 89,
+                                    "optionText": "الزمخشري"
+                                },
+                                {
+                                    "optionID": 272,
+                                    "questionID": 89,
+                                    "optionText": "دراز"
+                                }
+                            ]
+                        },
+                        {
+                            "questionID": 90,
+                            "questionText": "أول ما بدأ به القرآن الكريم مع المشركين هو تصحيح",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 273,
+                                    "questionID": 90,
+                                    "optionText": "الأخلاق"
+                                },
+                                {
+                                    "optionID": 274,
+                                    "questionID": 90,
+                                    "optionText": "العادات"
+                                },
+                                {
+                                    "optionID": 275,
+                                    "questionID": 90,
+                                    "optionText": "العبادات"
+                                },
+                                {
+                                    "optionID": 276,
+                                    "questionID": 90,
+                                    "optionText": "العقيدة"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "examID": 9,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": []
+                },
+                {
+                    "examID": 10,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": []
+                },
+                {
+                    "examID": 11,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": []
+                },
+                {
+                    "examID": 12,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": []
+                },
+                {
+                    "examID": 13,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": [
+                        {
+                            "questionID": 94,
+                            "questionText": "إضافة سؤال عن طريق Swagger لأول مرة.",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        }
+                    ]
+                },
+                {
+                    "examID": 14,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": [
+                        {
+                            "questionID": 95,
+                            "questionText": "إضافة سؤال عن طريق Swagger لأول مرة.",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        }
+                    ]
+                },
+                {
+                    "examID": 15,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": [
+                        {
+                            "questionID": 96,
+                            "questionText": "إضافة سؤال عن طريق Swagger لأول مرة.",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": []
+                        }
+                    ]
+                },
+                {
+                    "examID": 16,
+                    "courseID": 1,
+                    "examType": "MidExam",
+                    "createdByUserID": 0,
+                    "questionsList": [
+                        {
+                            "questionID": 97,
+                            "questionText": "إضافة سؤال عن طريق Swagger لأول مرة.",
+                            "questionTypeName": "Multiple Choice",
+                            "correctAnswer": null,
+                            "createdByUserID": 0,
+                            "questionTypeID": 0,
+                            "studentAnswer": null,
+                            "optionsDTO": [
+                                {
+                                    "optionID": 279,
+                                    "questionID": 97,
+                                    "optionText": "رائع رائع"
+                                },
+                                {
+                                    "optionID": 280,
+                                    "questionID": 97,
+                                    "optionText": "رائع رائع رائع"
+                                },
+                                {
+                                    "optionID": 281,
+                                    "questionID": 97,
+                                    "optionText": "رائع رائع رائع رائع"
+                                },
+                                {
+                                    "optionID": 282,
+                                    "questionID": 97,
+                                    "optionText": "رائع"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var el = document.getElementById("result");
+        var textEX = "الإمتحان رقم " + data[0].examID;
+        textEX += "<br/>";
+
+
+        for (var i = 0; i < data[0].questionsList.length; i++) {
+            textEX += (i + 1) + " " + data[0].questionsList[i].questionText;
+            textEX += "<br/>";
+            if (data[0].questionsList[i].optionsDTO.length > 0)
+                for (var j = 0; j < data[0].questionsList[i].optionsDTO.length; j++) {
+                    textEX += (j + 1) + " " + data[0].questionsList[i].optionsDTO[j].optionText;
+                    textEX += "<br/>";
+
+                }
+
+            textEX += "<br/>";
+        }
+
+
+        el.innerHTML = textEX
+    </script>
+</body>
+</html>

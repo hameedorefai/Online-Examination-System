@@ -1,0 +1,6 @@
+D:\reposss\ZamaylOnlineExams\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+D:\reposss\ZamaylOnlineExams\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\reposss\ZamaylOnlineExams\DataAccess\obj\Debug\DataAccess.dll
+D:\reposss\ZamaylOnlineExams\DataAccess\obj\Debug\DataAccess.pdb
+D:\reposss\ZamaylOnlineExams\DataAccess\bin\Debug\DataAccess.dll
+D:\reposss\ZamaylOnlineExams\DataAccess\bin\Debug\DataAccess.pdb
